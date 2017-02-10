@@ -21,7 +21,14 @@ myApp.onPageInit('register', function (page) {
   $$('#register').on('click', function() {
   	var storedData = myApp.formToData('#register-form');
   	if(storedData) {
-      storedData.store = storedData.store.join(',');
+      var checkStore = storedData.store;
+      console.log(checkStore);
+      if(checkStore.search(',') == true){
+        console.log('erro');
+        storedData.store = storedData.store.join(',');
+      }else {
+        storedData.store;
+      }
   		console.log(JSON.stringify(storedData));
       register(JSON.stringify(storedData));
   	}

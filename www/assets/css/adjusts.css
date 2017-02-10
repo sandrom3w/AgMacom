@@ -2,6 +2,10 @@
   margin-top: 0px !important;
 }
 
+.border{
+  padding:10px !important;
+}
+
 .noDisplay{
   display: none !important;
 }

@@ -1,47 +1,27 @@
-
-    <div class="navbar">
-      <div class="navbar-inner">
-        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-        <div class="left"></div>
-        <div class="center sliding"></div>
-        <div class="right"></div>
-      </div>
+<div class="pages ">
+  <div data-page="login" class="page">
+    <div>
+      <h1 style="text-align:center; margin-top:50px; margin-bottom:50px">Agenda Maçom</h1>
     </div>
-
-    <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-    <div class="pages navbar-through toolbar-through">
-      <!-- Page, "data-page" contains page name -->
-      <div data-page="login" class="page">
-        <div class="page-content login-screen-content">
-          <div class="login-screen-title">Agenda</div>
-          <form id="login-form" class="list-block">
-              <ul>
-                <li class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Email</div>
-                    <div class="item-input">
-                      <input type="email" id='inputEmail' name="email" placeholder="email">
-                    </div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Senha</div>
-                    <div class="item-input">
-                      <input type="password" id='inputPassword' name="password" placeholder="senha">
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            <div class="list-block">
-              <ul class="list-block-label">
-                <li><a href="#" id="btnlogin" class="button active" style="color:#fff !important">Entrar</a></li>
-              </ul>
-              <div class="list-block-label">
-                <p><a href="views/register.html" class="button active" style="color:#fff !important">Registrar</a></p>
-              </div>
+      <form id="login-form" class="form-horizontal">
+        <fieldset class="border">
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
             </div>
-          </form>
-        </div>
-      </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Senha</label>
+            <div class="col-lg-10">
+              <input type="password" class="form-control" id='inputPassword' name="password" placeholder="Senha">
+            </div>
+          </div>
+          <a href="#" id="btnlogin" class="btn btn-default btn-block">Entrar</a>
+          <br>
+          <a href="views/register.html" class="btn btn-default btn-block btn-sm" style="background-color:#444444">Registrar</a>
+        <fieldset>
+      </form>
     </div>
+  </div>
+</div>

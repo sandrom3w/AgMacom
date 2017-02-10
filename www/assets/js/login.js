@@ -1,11 +1,11 @@
-myApp.onPageAfterBack('login', function (page) {
+myApp.onPageBeforeAnimation('login', function (page) {
 	$$('.toolbar').hide();
-	$$('.navbar').show();
+	$$('.navbar').hide();
 });
 
 myApp.onPageInit('login', function (page) {
 	$$('.toolbar').hide();
-	$$('.navbar').show();
+	$$('.navbar').hide();
 
 	$$('#btnlogin').on('click', function() {
 
@@ -35,6 +35,7 @@ function login(storedData){
   		setTimeout(function () {
 				myApp.showTab('#tab1');
 				$$('.toolbar').show();
+				$$('.navbar').show();
 				$$('#inputEmail').val('');
 				$$('#inputPassword').val('');
 				checkStore();

@@ -1,124 +1,80 @@
-
-  <!-- We don't need full layout here, because this page will be parsed with Ajax-->
-  <!-- Top Navbar-->
-  <div class="navbar">
+  <div class="navbar navbar-default">
     <div class="navbar-inner">
       <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Voltar</span></a></div>
       <div class="center sliding">Registro</div>
-      <div class="right"></div>
+      <div class="right"/>
     </div>
   </div>
 
-  <div class="pages">
-    <!-- Page, data-page contains page name-->
-    <div data-page="register" class="page">
-      <!-- Scrollable page content-->
-      <div class="page-content">
-        <form id="register-form" class="list-block">
-            <ul>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Nome</div>
-                    <div class="item-input">
-                      <input type="text" name="name" placeholder="Nome"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Email</div>
-                    <div class="item-input">
-                      <input type="email" name="email" placeholder="Email"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Senha</div>
-                    <div class="item-input">
-                      <input type="password" name="password" placeholder="Senha"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">CIM</div>
-                    <div class="item-input">
-                        <input type="number" name="cim" id="CIM" placeholder="CIM"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Nascimento</div>
-                    <div class="item-input">
-                      <input type="date" name="birth" placeholder="Birth day" value="1980-12-01"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Celular</div>
-                    <div class="item-input">
-                      <input type="tel" name="phone" id="phone" placeholder="Celular"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Profissão</div>
-                    <div class="item-input">
-                      <input type="text" name="profession" placeholder="Profissão"/>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="item-content">
-                  <div class="item-inner">
-                    <div class="item-title label">Posição</div>
-                    <div class="item-input">
-                      <select name="position">
-                        <option>Aprendiz</option>
-                        <option>Acompanhante</option>
-                        <option>Mestre</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Procurar Lojas">
-                  <select name="store" id="selectStore" multiple maxlength="5">
-
-                  </select>
-                  <div class="item-content">
-                    <div class="item-inner">
-                      <div class="item-title label">Lojas</div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          <div class="list-block">
-            <ul class="list-block-label">
-              <p><a href="#" id="register" class="button button-round active">Registrar</a></p>
-            </ul>
-          </div>
-        </form>
-      </div>
+<div class="pages">
+  <div data-page="register" class="page">
+    <div class="page-content">
+      <form id="register-form" class="form-horizontal">
+          <fieldset class="border">
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Nome</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" name="name" placeholder="Nome">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-10">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Senha</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" name="password" placeholder="Senha">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">CIM</label>
+              <div class="col-lg-10">
+                <input type="number" class="form-control" id="cim" name="cim" placeholder="CIM">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Data de Nascimento</label>
+              <div class="col-lg-10">
+                <input type="date" class="form-control" name="birth" placeholder="Birth day" value="1980-12-01">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Celular</label>
+              <div class="col-lg-10">
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Celular">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Profissão</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" name="profession" placeholder="Profissão">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Posição</label>
+              <div class="col-lg-10">
+                <select class="form-control" name="position">
+                  <option>Aprendiz</option>
+                  <option>Acompanhante</option>
+                  <option>Mestre</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Lojas</label>
+              <div class="col-lg-10">
+                <select class="form-control" name="store" id="selectStore">
+                  <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Procurar Lojas"/>
+                </select>
+              </div>
+            </div>
+            <a href="#" id="register" class="btn btn-default btn-block">Registrar</a>
+          <fieldset>
+        </div>
+      </form>
     </div>
   </div>
+</div>

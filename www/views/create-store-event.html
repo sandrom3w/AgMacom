@@ -1,0 +1,76 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Novo Evento</div>
+  </div>
+</div>
+
+<div data-page="createStoreEvent" class="page">
+  <div class="page-content">
+    <div class="content-block-title  calendar-adjust">
+      <p id="eventStore" name='store'></p>
+    </div>
+    <form id="createStoreEvent-form" class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Nome</div>
+                <div class="item-input">
+                  <input type="text" name="title" id="eventName"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Data</div>
+                <div class="item-input">
+                  <input type="date" name="date" id="eventDate"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Hora</div>
+                <div class="item-input">
+                  <input type="time" name="hour" id="eventHour"/>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Dia todo:</div>
+                <div class="item-input">
+                  <label class="label-switch">
+                    <input id="checkHour" type="checkbox">
+                    <div class="checkbox"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Descrição</div>
+                <div class="item-input">
+                  <textarea name="description" id="eventDesc"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      <div class="list-block">
+        <ul class="list-block-label">
+          <p><a href="#" id="newStoreEvent" class="button button-round active">Salvar</a></p>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- meta tags  requiridas-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Título -->
+    <title>Agenda Maçom</title>
+    <!-- Ícones -->
+    <link rel="stylesheet" href="assets/lib/framework7/css/framework7-icons.css">
+    <link rel="stylesheet" href="assets/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- IOS Theme-->
+    <link rel="stylesheet" href="assets/lib/framework7/css/framework7.ios.min.css">
+    <!-- IOS Colors -->
+    <link rel="stylesheet" href="assets/lib/framework7/css/framework7.ios.colors.min.css">
+    <!-- CSS Personalizado-->
+    <link rel="stylesheet" href="assets/css/adjusts.css">
+    <link rel="stylesheet" href="assets/lib/izitoast/iziToast.min.css">
+
+    <!-- CSS bootstrap
+    <link rel="stylesheet" href="assets/lib/simplex/less/bootswatch.less">
+    <link rel="stylesheet" href="assets/lib/simplex/less/variables.less">
+    <link rel="stylesheet" href="assets/lib/simplex/sass/_bootswatch.scss">
+    <link rel="stylesheet" href="assets/lib/simplex/sass/_variables.scss">
+    <link rel="stylesheet" href="assets/lib/simplex/css/bootstrap.min.css">
+    -->
+
+  </head>
+  <body class="theme-black">
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+  	<!-- Tabs, now tabs wrapper is "views" -->
+  	<div class="views" style="z-index: 0;">
+
+
+      <div class="tabs-animated-wrap">
+      	<div class="tabs toolbar-fixed">
+          <!-- Tab 1 - View 1, active by default -->
+      	  <div id="tab0" class="view tab active">
+            <div class="navbar" style="display: none">
+            </div>
+        		<div class="pages navbar-fixed">
+        		  <div class="page">
+          			<div class="page-content">
+          			</div>
+        		  </div>
+        		</div>
+      	  </div>
+
+      	  <!-- Tab 1 - View 1, active by default -->
+      	  <div id="tab1" class="view tab">
+        		<div class="navbar">
+        		  <div class="navbar-inner">
+        			<div class="center">Calendário</div>
+              <div class="right">
+                <a href="#" class="link icon-only" id="eventPopover"> <i class="f7-icons">add</i></a>
+              </div>
+        		  </div>
+        		</div>
+        		<div class="pages navbar-fixed">
+        		  <div data-page="calendar" class="page">
+          			<div class="page-content">
+                  <div class="content-block-title calendar-adjust"><p id="titleStore"></p></div>
+                  <div class="content-block">
+                    <div style="padding:0; margin-right:-15px; width:auto;" class="content-block-inner">
+                      <div id="calendar-inline-container"></div>
+                    </div>
+                  </div>
+                  <div class="content-block-title events-adjust">Eventos</div>
+                  <div class="row" style="padding: 0px 20px 0px 20px;">
+                    <div class="col-33" style="text-align: center;"><div class="rectangle rectangle-store"></div><span class="events-span">Loja</span></div>
+                    <div class="col-33" style="text-align: center;"><div class="rectangle rectangle-personal"></div><span class="events-span">Pessoal</span></div>
+                    <div class="col-33" style="text-align: center;"><div class="rectangle rectangle-holiday"></div><span class="events-span">Feriado</span></div>
+                  </div>
+                  <div class="list-block  media-list eventlist-adjust">
+                    <ul id="lista-eventos"></ul>
+                  </div>
+          			</div>
+        		  </div>
+        		</div>
+      	  </div>
+
+
+      	  <!-- Tab 2 - View 2 -->
+      	  <div id="tab2" class="view tab">
+        		<div class="navbar">
+        		  <div class="navbar-inner">
+        			<div class="center">Lojas</div>
+        		  </div>
+        		</div>
+        		<div class="pages navbar-fixed">
+        		  <div data-page="stores" class="page">
+        			<div class="page-content">
+                <form class="searchbar">
+                  <div class="searchbar-input">
+                    <input type="search" placeholder="Search">
+                    <a href="#" class="searchbar-clear"></a>
+                  </div>
+                  <a href="#" class="searchbar-cancel">Cancel</a>
+                </form>
+                <!-- Search Bar overlay-->
+                <div class="searchbar-overlay"></div>
+                <div class="list-block media-list list-block-search searchbar-found search_adjust">
+                  <ul id="lista-loja"></ul>
+                </div>
+        			</div>
+        		  </div>
+        		</div>
+      	  </div>
+
+      	  <!-- Tab 2 - View 3 -->
+      	  <div id="tab3" class="view tab">
+        		<div class="navbar">
+        		  <div class="navbar-inner">
+                <div class="left">
+                  <a href="#" class="link icon-only" id="profilePopover"> <i class="f7-icons">gear_fill</i></a>
+                </div>
+        			  <div class="center">Perfil</div>
+                <div class="right">
+                  <a href="#" class="link back" id="iconLogout"> <i class="f7-icons">logout_fill</i></a>
+                </div>
+        		  </div>
+        		</div>
+        		<div class="pages navbar-fixed">
+        		  <div data-page="profile" class="page">
+        			<div class="page-content">
+                <div class="content-block search_adjust">
+                  <form class="">
+                    <div class="row">
+                      <div class="col-100" style="text-align:center"><h3 id="userName"></h3></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-100" style="text-align:center"><h4 id="userPosition"></h4></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-100"><p id="userEmailFull"></p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-70"><p id="userPhoneFull"/></div>
+                      <div class="col-30"><p id="userCimFull"/></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-100"><p id="userBirthFull"></p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-100"><p id="userProfession"></p></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-100" style="text-align:center"><h4>Lojas Cadastradas</h4></div>
+                    </div>
+                  </form>
+                  <div class="list-block media-list search_adjust">
+                    <ul id="lista-profile"></ul>
+                  </div>
+                </div>
+        			</div>
+        		  </div>
+        		</div>
+      	  </div>
+
+    	   </div>
+  	  </div>
+  	  <!-- Tab bar with tab links -->
+  	  <div class="toolbar tabbar tabbar-labels" style="display: none">
+    		<div class="toolbar-inner">
+    		  <a href="#tab1" class="tab-link active">
+      			<i class="f7-icons">today</i>
+      			<span class="tabbar-label">Calendario</span>
+    		  </a>
+    		  <a href="#tab2" class="tab-link">
+      			<i class="f7-icons">list</i>
+      			<span class="tabbar-label">Lojas</span>
+    		  </a>
+    		  <a href="#tab3" class="tab-link">
+      			<i class="f7-icons">person</i>
+      			<span class="tabbar-label">Perfil</span>
+    		  </a>
+    	  </div>
+      </div>
+    </div>
+
+    <!-- //////////////////////////////////////// -->
+    <div class="popover popover-menu" style="width: auto">
+      <div class="popover-angle"></div>
+      <div class="popover-inner">
+        <div class="popover-view view">
+          <div class="list-block">
+            <ul>
+              <li><a href="#" id="editProfile" class="list-button item-link">Editar Perfil</a></li>
+              <li><a href="#" id="updatePassword" class="list-button item-link">Alterar Senha</a></li>
+              <li id="adminStore"><a href="#" id="createStore" class="list-button item-link">Nova Loja</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popover popover-event" style="width: auto">
+      <div class="popover-angle"></div>
+      <div class="popover-inner">
+        <div class="popover-view view">
+          <div class="list-block">
+            <ul>
+              <li><a href="#" id="newEvent" class="list-button item-link">Evento Pessoal</a></li>
+              <li id="adminEvent" style="display: none"><a href="#" id="newEventStore" class="list-button item-link">Evento Loja</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cordova/Phonegap JS -->
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <!-- Library JS -->
+    <script type="text/javascript" src="assets/lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="assets/lib/jquery/jquery.mask.js"></script>
+    <script type="text/javascript" src="assets/lib/izitoast/iziToast.min.js"></script>
+    <!-- My JS -->
+    <script type="text/javascript" src="assets/js/index.js"></script>
+
+    <script type="text/javascript" src="assets/js/login.js"></script>
+    <script type="text/javascript" src="assets/js/register.js"></script>
+    <script type="text/javascript" src="assets/js/store.js"></script>
+    <script type="text/javascript" src="assets/js/calendar.js"></script>
+    <script type="text/javascript" src="assets/js/event.js"></script>
+    <script type="text/javascript" src="assets/js/stores.js"></script>
+    <script type="text/javascript" src="assets/js/profile.js"></script>
+    <script type="text/javascript" src="assets/js/edit-store.js"></script>
+    <script type="text/javascript" src="assets/js/edit-profile.js"></script>
+    <script type="text/javascript" src="assets/js/create-store.js"></script>
+    <script type="text/javascript" src="assets/js/create-event.js"></script>
+    <script type="text/javascript" src="assets/js/create-store-event.js"></script>
+    <script type="text/javascript" src="assets/js/edit-event.js"></script>
+    <script type="text/javascript" src="assets/js/edit-password.js"></script>
+  </body>
+</html>

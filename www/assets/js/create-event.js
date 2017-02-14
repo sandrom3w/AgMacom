@@ -1,11 +1,9 @@
-myApp.onPageAfterBack('createEvent', function (page) {
-  $$('.toolbar').show();
-});
-
-myApp.onPageInit('createEvent', function (page) {
+myApp.onPageBeforeAnimation('createEvent', function (page) {
   $$('.toolbar').hide();
   $('#eventHour').mask('00:00');
   $("#eventHour").prop('value', '00:00');
+  $("#eventDesc").prop('value', '');
+
 
   var userData = JSON.parse(storage.getItem('user'));
 
@@ -32,6 +30,10 @@ myApp.onPageInit('createEvent', function (page) {
     } else {
       $("#eventHour").prop('disabled', false);
     }
+  });
+
+  $$('#backCalendar').on('click', function() {
+    $$('.toolbar').show();
   });
 });
 
@@ -62,6 +64,7 @@ function addNewEvent(formEvent){
         });
       }).always(function() {
         checkStore();
+        $$('.toolbar').show();
         calendarView.router.back();
       });
     }

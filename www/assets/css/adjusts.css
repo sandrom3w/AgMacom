@@ -1,5 +1,25 @@
+a:-webkit-any-link {
+  text-decoration: none !important;
+}
+
 .search_adjust{
   margin-top: 0px !important;
+}
+
+.picker-calendar-day.picker-calendar-day-selected span {
+  background: #333333;
+  color: #fff;
+}
+
+.popover-angle.on-top:after {
+    left: 0;
+    top: 19px;
+    border: solid 1px;
+    border-color: gray;
+}
+
+.tabbar a.active {
+    color: #333333;
 }
 
 .border{
@@ -34,9 +54,14 @@
   margin-top: -20px;
 }
 
-.calendar-adjust{
+.title-adjust{
   text-align: center;
-  margin-top: 5px;
+  margin-top: 10px;
+}
+
+.page-content-adjust{
+  overflow-x: hidden !important;
+  position: relative !important;
 }
 
 .events-span{
@@ -50,13 +75,16 @@
 
 .border-personal{
   border-left: solid 10px #34495E;
-  border-radius: 2px 0 0 2px;
+  border-radius: 15px 15px 15px 15px;
+  border-right: solid 10px #34495E;
 }
 .border-store{
   border-left: solid 10px #C0392B;
-  border-radius: 2px 0 0 2px;
+  border-radius: 15px 15px 15px 15px;
+  border-right: solid 10px #C0392B;
 }
 .border-holiday{
   border-left: solid 10px #F1C40F;
-  border-radius: 2px 0 0 2px;
+  border-radius: 15px 15px 15px 15px;
+  border-right: solid 10px #F1C40F;
 }

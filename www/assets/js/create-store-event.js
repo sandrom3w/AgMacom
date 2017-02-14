@@ -1,8 +1,4 @@
-myApp.onPageAfterBack('createStoreEvent', function (page) {
-  $$('.toolbar').show();
-});
-
-myApp.onPageInit('createStoreEvent', function (page) {
+myApp.onPageBeforeAnimation('createStoreEvent', function (page) {
   $$('.toolbar').hide();
   $('#eventHour').mask('00:00');
   $("#eventHour").prop('value', '00:00');
@@ -40,6 +36,10 @@ myApp.onPageInit('createStoreEvent', function (page) {
     } else {
       $("#eventHour").prop('disabled', false);
     }
+  });
+
+  $$('#backCalendar').on('click', function() {
+    $$('.toolbar').show();
   });
 });
 

@@ -3,7 +3,6 @@ var monthNames = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'J
 var semanaNomes = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
 var idStoreGlobal;
 
-
 function checkStore(){
 	var userData = JSON.parse(storage.getItem('user'));
 	var storeData = JSON.parse(storage.getItem('stores'));
@@ -170,14 +169,14 @@ function addEvent(store) {
 	}else{
 		var layoutDaLista =
 		  '<li>' +
-		    '<a href="#" class="item-link item-content border-store">' +
-		      '<div class="item-inner">' +
+		    //'<a href="#" class="item-content border-store">' +
+		      '<div class="item-inner item-content border-store">' +
 		        '<div class="item-title-row">' +
 		          '<div class="item-title">RITO: '+ store.rito +'</div>' +
 		        '</div>' +
 		        '<div class="item-subtitle">'+ store.hour + '</div>' +
 		      '</div>' +
-		    '</a>' +
+		    //'</a>' +
 		  '</li>';
 		$$('#lista-eventos').append(layoutDaLista);
 	}
@@ -224,6 +223,7 @@ function setEvents(idStore) {
 	stringAdjust = stringAdjust.replace(",,,", ",");
 	stringAdjust = stringAdjust.replace(",,", ",");
 	events = stringAdjust.split(',');
+
 
 	return events;
 
@@ -364,9 +364,29 @@ function splitAdmin(adminEvent, id){
   }
 }
 
+var modalCheck = false;
+var y = 0;
+
+$('body').on('click', function (e) {
+	if(modalCheck){
+		y++;
+		if(y>1){
+			myApp.closeModal('.popover');
+			modalCheck = false;
+			y=0;
+		}else{
+			y++;
+		}
+	}
+});
+
 $$('#eventPopover').on('click', function () {
 	var clickedLink = this;
+
 	myApp.popover('.popover-event', clickedLink);
+	$$('.modal-overlay').addClass('noDisplay');
+	modalCheck = true;
+
 
 	$$('#newEvent').on('click', function() {
 		calendarView.router.loadPage('views/create-event.html');

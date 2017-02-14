@@ -37,7 +37,7 @@
 
       <div class="tabs-animated-wrap">
       	<div class="tabs toolbar-fixed">
-          <!-- Tab 1 - View 1, active by default -->
+          <!-- Tab 0 - View 0, active by default -->
       	  <div id="tab0" class="view tab active">
             <div class="navbar" style="display: none">
             </div>
@@ -49,7 +49,7 @@
         		</div>
       	  </div>
 
-      	  <!-- Tab 1 - View 1, active by default -->
+      	  <!-- Tab 1 - View 1 -->
       	  <div id="tab1" class="view tab">
         		<div class="navbar">
         		  <div class="navbar-inner">
@@ -61,8 +61,10 @@
         		</div>
         		<div class="pages navbar-fixed">
         		  <div data-page="calendar" class="page">
-          			<div class="page-content">
-                  <div class="content-block-title calendar-adjust"><p id="titleStore"></p></div>
+          			<div class="page-content page-content-adjust" style="background-color: #fcfcfc">
+                  <div class="content-block-title title-adjust">
+                    <h4><strong id="titleStore"></strong></h4>
+                  </div>
                   <div class="content-block">
                     <div style="padding:0; margin-right:-15px; width:auto;" class="content-block-inner">
                       <div id="calendar-inline-container"></div>
@@ -82,8 +84,7 @@
         		</div>
       	  </div>
 
-
-      	  <!-- Tab 2 - View 2 -->
+          <!-- Tab 2 - View 2 -->
       	  <div id="tab2" class="view tab">
         		<div class="navbar">
         		  <div class="navbar-inner">
@@ -92,10 +93,10 @@
         		</div>
         		<div class="pages navbar-fixed">
         		  <div data-page="stores" class="page">
-        			<div class="page-content">
-                <form class="searchbar">
+        			<div class="page-content page-content-adjust" style="margin-top:5px">
+                <form class="searchbar" style="background-color:#333">
                   <div class="searchbar-input">
-                    <input type="search" placeholder="Search">
+                    <input type="search" placeholder="Procurar">
                     <a href="#" class="searchbar-clear"></a>
                   </div>
                   <a href="#" class="searchbar-cancel">Cancel</a>
@@ -110,8 +111,35 @@
         		</div>
       	  </div>
 
-      	  <!-- Tab 2 - View 3 -->
+      	  <!-- Tab 3 - View 3 -->
       	  <div id="tab3" class="view tab">
+        		<div class="navbar">
+        		  <div class="navbar-inner">
+        			<div class="center">Eventos</div>
+        		  </div>
+        		</div>
+        		<div class="pages navbar-fixed">
+        		  <div data-page="stores" class="page">
+        			<div class="page-content page-content-adjust" style="margin-top:5px">
+                <form class="searchbar" style="background-color:#333">
+                  <div class="searchbar-input">
+                    <input type="search" placeholder="Procurar">
+                    <a href="#" class="searchbar-clear"></a>
+                  </div>
+                  <a href="#" class="searchbar-cancel">Cancel</a>
+                </form>
+                <!-- Search Bar overlay-->
+                <div class="searchbar-overlay"></div>
+                <div class="list-block media-list list-block-search searchbar-found search_adjust">
+                  <ul id="lista-loja"></ul>
+                </div>
+        			</div>
+        		  </div>
+        		</div>
+      	  </div>
+
+      	  <!-- Tab 4 - View 4 -->
+      	  <div id="tab4" class="view tab">
         		<div class="navbar">
         		  <div class="navbar-inner">
                 <div class="left">
@@ -127,30 +155,29 @@
         		  <div data-page="profile" class="page">
         			<div class="page-content">
                 <div class="content-block search_adjust">
-                  <form class="">
-                    <div class="row">
-                      <div class="col-100" style="text-align:center"><h3 id="userName"></h3></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-100" style="text-align:center"><h4 id="userPosition"></h4></div>
-                    </div>
-                    <div class="row">
+                  <form class="form-horizontal">
+
+                      <p style="text-align:center"><h3 id="userName"></h3></p>
+                      <div class="col-100" style="text-align:center"><h4 ><strong id="userPosition"></strong></h4>
+
+
                       <div class="col-100"><p id="userEmailFull"></p></div>
-                    </div>
-                    <div class="row">
+
+
                       <div class="col-70"><p id="userPhoneFull"/></div>
                       <div class="col-30"><p id="userCimFull"/></div>
-                    </div>
-                    <div class="row">
+
+
                       <div class="col-100"><p id="userBirthFull"></p></div>
-                    </div>
-                    <div class="row">
+
+
                       <div class="col-100"><p id="userProfession"></p></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-100" style="text-align:center"><h4>Lojas Cadastradas</h4></div>
-                    </div>
+
                   </form>
+
+                    <div class="col-100" style="text-align:center"><h4><u>Lojas Cadastradas</u></h4></div>
+                  </div>
+
                   <div class="list-block media-list search_adjust">
                     <ul id="lista-profile"></ul>
                   </div>
@@ -169,11 +196,15 @@
       			<i class="f7-icons">today</i>
       			<span class="tabbar-label">Calendario</span>
     		  </a>
-    		  <a href="#tab2" class="tab-link">
-      			<i class="f7-icons">list</i>
-      			<span class="tabbar-label">Lojas</span>
-    		  </a>
+          <a href="#tab2" class="tab-link active">
+            <i class="f7-icons">list</i>
+            <span class="tabbar-label">Lojas</span>
+          </a>
     		  <a href="#tab3" class="tab-link">
+      			<i class="f7-icons">help</i>
+      			<span class="tabbar-label">Eventos</span>
+    		  </a>
+    		  <a href="#tab4" class="tab-link">
       			<i class="f7-icons">person</i>
       			<span class="tabbar-label">Perfil</span>
     		  </a>
@@ -198,7 +229,6 @@
     </div>
 
     <div class="popover popover-event" style="width: auto">
-      <div class="popover-angle"></div>
       <div class="popover-inner">
         <div class="popover-view view">
           <div class="list-block">
@@ -215,8 +245,10 @@
     <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <!-- Library JS -->
     <script type="text/javascript" src="assets/lib/framework7/js/framework7.min.js"></script>
+    <!-- JQuery JS -->
     <script type="text/javascript" src="assets/lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/lib/jquery/jquery.mask.js"></script>
+    <!-- iziToast -->
     <script type="text/javascript" src="assets/lib/izitoast/iziToast.min.js"></script>
     <!-- My JS -->
     <script type="text/javascript" src="assets/js/index.js"></script>

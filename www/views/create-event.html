@@ -1,73 +1,50 @@
 <div class="navbar">
   <div class="navbar-inner">
-    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="left"><a href="#" id="backCalendar" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
     <div class="center sliding">Novo Evento</div>
   </div>
 </div>
 
 <div data-page="createEvent" class="page">
-  <div class="page-content">
-    <form id="createEvent-form" class="list-block">
-        <ul>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Nome</div>
-                <div class="item-input">
-                  <input type="text" name="title" id="eventName"/>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Data</div>
-                <div class="item-input">
-                  <input type="date" name="date" id="eventDate"/>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Hora</div>
-                <div class="item-input">
-                  <input type="time" name="hour" id="eventHour"/>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Dia todo:</div>
-                <div class="item-input">
-                  <label class="label-switch">
-                    <input id="checkHour" type="checkbox">
-                    <div class="checkbox"></div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Descrição</div>
-                <div class="item-input">
-                  <textarea name="description" id="eventDesc"></textarea>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      <div class="list-block">
-        <ul class="list-block-label">
-          <p><a href="#" id="newEvent" class="button button-round active">Salvar</a></p>
-        </ul>
-      </div>
+  <div class="page-content page-content-adjust">
+    <form id="createEvent-form" class="form-horizontal">
+      <fieldset class="border">
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Nome</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" name="title" id="eventName"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Data</label>
+          <div class="col-lg-10">
+            <input type="date" class="form-control" name="date" id="eventDate"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Hora</label>
+          <div class="col-lg-10">
+            <input type="time" class="form-control" name="hour" id="eventHour"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Dia todo:
+              <label class="label-switch">
+                <input id="checkHour" type="checkbox">
+                <div class="checkbox"></div>
+              </label>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="textArea" class="col-lg-2 control-label">Descrição</label>
+          <div class="col-lg-10">
+            <textarea name="description" class="form-control" rows="3" id="eventDesc" style="z-index: auto; position: relative; line-height: 21.4286px; font-size: 15px; transition: none; background: transparent !important;">
+            </textarea>
+          </div>
+        </div>
+        <br>
+        <a href="#" id="newEvent" class="btn btn-default btn-block">Salvar</a>
+      </fieldset>
     </form>
   </div>
 </div>

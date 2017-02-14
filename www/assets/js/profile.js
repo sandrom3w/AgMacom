@@ -63,6 +63,8 @@ $$('#iconLogout').on('click', function () {
 $$('#profilePopover').on('click', function () {
 	var clickedLink = this;
 	myApp.popover('.popover-menu', clickedLink);
+	$('.modal-overlay').addClass('noDisplay');
+	modalCheck = true;
 
 	$$('#editProfile').on('click', function() {
 		profileView.router.loadPage('views/edit-profile.html');

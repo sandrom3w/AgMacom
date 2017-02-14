@@ -43,6 +43,13 @@ var $$ = Dom7;
 
 app.initialize();
 
+var device = Framework7.prototype.device;
+if(device.iphone){
+  console.log('this is iPhone')
+}else if(device.android){
+  console.log('this is Android')
+}
+
 // Add view
 var splashView = myApp.addView('#tab0', {
   // Because we want to use dynamic navbar, we need to enable it for this view:

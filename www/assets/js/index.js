@@ -45,7 +45,7 @@ app.initialize();
 
 var device = Framework7.prototype.device;
 if(device.iphone){
-  console.log('this is iPhone')
+  console.log('this is iPhone');
 }else if(device.android){
   console.log('this is Android')
 }

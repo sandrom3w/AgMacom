@@ -10,6 +10,9 @@ a:-webkit-any-link {
   background: #333333;
   color: #fff;
 }
+.label-switch input[type=checkbox]:checked+.checkbox {
+    background: #235177 !important;
+}
 
 .popover-angle.on-top:after {
     left: 0;
@@ -62,6 +65,8 @@ a:-webkit-any-link {
 .page-content-adjust{
   overflow-x: hidden !important;
   position: relative !important;
+  padding-top: 48px !important;
+  background-color: #fff;
 }
 
 .events-span{

@@ -6,71 +6,92 @@
 </div>
 
 <div data-page="createStoreEvent" class="page">
-  <div class="page-content">
-    <div class="content-block-title  calendar-adjust">
-      <p id="eventStore" name='store'></p>
-    </div>
-    <form id="createStoreEvent-form" class="list-block">
-        <ul>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Nome</div>
-                <div class="item-input">
-                  <input type="text" name="title" id="eventName"/>
-                </div>
-              </div>
+  <div class="page-content page-content-adjust">
+    <h4 id="eventStore" name='store' style="text-align:center;"></h4>
+    <form id="createStoreEvent-form" class="form-horizontal">
+      <fieldset class="border">
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Nome</label>
+          <div class="col-lg-10">
+            <input type="text" class="form-control" name="title" id="eventName"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Data</label>
+          <div class="col-lg-10">
+            <input type="date" class="form-control" name="date" id="eventDate"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Hora</label>
+          <div class="col-lg-10">
+            <input type="time" class="form-control" name="hour" id="eventHour"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Dia todo:</label>
+          <label class="label-switch">
+            <input id="checkHour" type="checkbox">
+            <div class="checkbox"></div>
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Tipo de Evento</label>
+          <div class="col-lg-10">
+            <div class="radio" style="text-align:center;">
+              <label style="font-weight:normal;width:45%;">
+                <input type="radio" name="eventType" id="eventPublic" value="option1" checked="">
+                Público
+              </label>
+              <label style="font-weight:normal;width:45%;">
+                <input type="radio" name="eventType" id="eventPrivate" value="option2">
+                Particular
+              </label>
             </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Data</div>
-                <div class="item-input">
-                  <input type="date" name="date" id="eventDate"/>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Grau</label>
+          <div class="col-lg-10">
+            <div class="radio" style="text-align:center;">
+              <label style="font-weight:normal;width:22%;">
+                <input type="radio" name="eventGrau" id="eventFirst" value="option1" checked="">
+                1º
+              </label>
+              <label style="font-weight:normal;width:22%;">
+                <input type="radio" name="eventGrau" id="eventSecond" value="option2">
+                2º
+              </label>
+              <label style="font-weight:normal;width:22%;">
+                <input type="radio" name="eventGrau" id="eventThird" value="option3">
+                3º
+              </label>
+              <label style="font-weight:normal;width:22%;">
+                <input type="radio" name="eventGrau" id="eventAll" value="option4">
+                Todos
+              </label>
             </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Hora</div>
-                <div class="item-input">
-                  <input type="time" name="hour" id="eventHour"/>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Dia todo:</div>
-                <div class="item-input">
-                  <label class="label-switch">
-                    <input id="checkHour" type="checkbox">
-                    <div class="checkbox"></div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label">Descrição</div>
-                <div class="item-input">
-                  <textarea name="description" id="eventDesc"></textarea>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      <div class="list-block">
-        <ul class="list-block-label">
-          <p><a href="#" id="newStoreEvent" class="button button-round active">Salvar</a></p>
-        </ul>
-      </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Carregar Imagem</label>
+          <div class="input-group" style="padding:0 15px 0 15px;">
+            <input class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-default file-button" type="file, button">Upload</button>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="textArea" class="col-lg-2 control-label">Descrição</label>
+          <div class="col-lg-10">
+            <textarea name="description" class="form-control" rows="3" id="eventDesc" style="z-index: auto; position: relative; line-height: 21.4286px; font-size: 15px; transition: none; background: transparent !important;">
+            </textarea>
+          </div>
+        </div>
+        <br>
+        <a href="#" id="newStoreEvent" class="btn btn-default btn-block">Salvar</a>
+      <fieldset>
     </form>
   </div>
 </div>
